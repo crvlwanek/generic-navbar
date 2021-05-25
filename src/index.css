@@ -1,13 +1,126 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+html,
+body {
+  margin: 0;
+  width: auto;
+  height: 100%;
+}
+
+.header {
+  height: 100vh;
+  width: 100%;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+/* ----------------- <NavBar.tsx> ------------------- */
+.navbar__holder {
+  color: white;
+  position: fixed;
+  width: 100%;
+}
+
+.navbar__nav-scroll {
+  background-color: white;
+  color: black;
+  transition: background-color 0.2s cubic-bezier(0.25, 0.1, 0.6, 0.54);
+}
+
+.navbar__nav-top {
+  background-color: transparent;
+  transition: background-color 0.2s cubic-bezier(0.25, 0.1, 0.6, 0.54);
+}
+
+.navbar__wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 17px;
+}
+
+.navbar__left-menu {
+  display: none;
+  width: 33.33%;
+}
+
+.navbar__left_list {
+  justify-content: flex-start;
+}
+
+.navbar__list {
+  display: flex;
+  list-style: none;
+  list-style-image: none;
+  margin: 7px 0;
+  padding: 0;
+}
+
+.navbar__list-item {
+  display: inline-block;
+}
+
+.navbar__list-link {
+  background-color: transparent;
+  border: 0;
+  color: inherit;
+  font-family: sans-serif;
+  font-size: 0.8125rem;
+  margin: 0 15px;
+  outline: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.navbar__logo-link {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navbar__logo {
+  color: inherit;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.navbar__right-menu {
+  display: none;
+  width: 33.33%;
+}
+
+.navbar__right-list {
+  justify-content: flex-end;
+}
+
+@media (min-width: 1025px) {
+  .navbar__wrapper {
+    padding: 15px 25px;
+  }
+  .navbar__left-menu,
+  .navbar__right-menu {
+    display: block;
+  }
+}
+
+/* ----------------- </NavBar.tsx> ------------------- */
