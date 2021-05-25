@@ -64,9 +64,9 @@ export const NavBar: React.FC = () => {
         </nav>
         <div className="navbar__mobile">
           <span className="navbar__hamburger-menu">
-            <span className="navbar__icon-line">-</span>
-            <span className="navbar__icon-line">-</span>
-            <span className="navbar__icon-line">-</span>
+            <span className="navbar__icon-line">–</span>
+            <span className="navbar__icon-line">–</span>
+            <span className="navbar__icon-line">–</span>
           </span>
         </div>
       </div>

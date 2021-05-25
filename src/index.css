@@ -114,21 +114,21 @@ body {
 
 .navbar__mobile {
   display: block;
-  margin-bottom: 24px;
 }
 
 .navbar__hamburger-menu {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
   justify-content: center;
 }
 
 .navbar__icon-line {
-  font-size: 90px;
+  font-size: 70px;
   font-style: none;
-  font-weight: 100;
+  font-weight: 900;
   font-variant: normal;
-  line-height: 0.5rem;
+  line-height: 0.7rem;
   text-transform: none;
   vertical-align: text-top;
 }
