@@ -55,7 +55,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 17px;
+  padding: 0 17px;
 }
 
 .navbar__left-menu {
@@ -113,6 +113,27 @@ body {
   justify-content: flex-end;
 }
 
+.navbar__mobile {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.navbar__hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.navbar__icon-line {
+  font-size: 90px;
+  font-style: none;
+  font-weight: 100;
+  font-variant: normal;
+  line-height: 0.5rem;
+  text-transform: none;
+  vertical-align: text-top;
+}
+
 @media (min-width: 1025px) {
   .navbar__wrapper {
     padding: 15px 25px;
@@ -120,6 +141,9 @@ body {
   .navbar__left-menu,
   .navbar__right-menu {
     display: block;
+  }
+  .navbar__mobile {
+    display: none;
   }
 }
 
