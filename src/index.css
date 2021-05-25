@@ -1,17 +1,3 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 html,
 body {
   margin: 0;
@@ -33,6 +19,10 @@ body {
 }
 
 /* ----------------- <NavBar.tsx> ------------------- */
+:root {
+  --max-width: 1330px;
+}
+
 .navbar__holder {
   color: white;
   position: fixed;
@@ -41,12 +31,14 @@ body {
 
 .navbar__nav-scroll {
   background-color: white;
+  border-color: black;
   color: black;
   transition: background-color 0.2s cubic-bezier(0.25, 0.1, 0.6, 0.54);
 }
 
 .navbar__nav-top {
   background-color: transparent;
+  border-color: white;
   transition: background-color 0.2s cubic-bezier(0.25, 0.1, 0.6, 0.54);
 }
 
@@ -55,6 +47,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
+  max-width: var(--max-width);
   padding: 0 17px;
 }
 
@@ -81,7 +74,7 @@ body {
 
 .navbar__list-link {
   background-color: transparent;
-  border: 0;
+  border: 1px solid transparent;
   color: inherit;
   font-family: sans-serif;
   font-size: 0.8125rem;
@@ -90,7 +83,13 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   text-transform: uppercase;
+  transition: border-color 0.4s ease;
   white-space: nowrap;
+}
+
+.navbar__list-link:hover {
+  border-bottom: 1px solid;
+  transition: border-color 0.2s ease;
 }
 
 .navbar__logo-link {
