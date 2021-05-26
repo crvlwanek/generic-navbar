@@ -1,12 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import { NavBar } from "./nav/NavBar";
+
 import reportWebVitals from "./reportWebVitals";
+import "./index.css";
+
+import { HeroSplash } from "./hero/HeroSplash";
+import { NavBar } from "./nav/NavBar";
 
 ReactDOM.render(
   <React.StrictMode>
     <NavBar />
+    <HeroSplash />
     <div className="header red"></div>
     <div className="header blue"></div>
   </React.StrictMode>,

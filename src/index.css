@@ -32,6 +32,7 @@ body {
   position: fixed;
   width: 100%;
   transition: 0.2s cubic-bezier(0.25, 0.1, 0.6, 0.54);
+  z-index: 1;
 }
 
 .navbar__nav-scroll {
@@ -54,13 +55,10 @@ body {
   padding: 10px 17px;
 }
 
-.navbar__left-menu {
+.navbar__left-menu,
+.navbar__right-menu {
   display: none;
   width: 33.33%;
-}
-
-.navbar__left_list {
-  justify-content: flex-start;
 }
 
 .navbar__list {
@@ -69,6 +67,14 @@ body {
   list-style-image: none;
   margin: 0;
   padding: 0;
+}
+
+.navbar__left_list {
+  justify-content: flex-start;
+}
+
+.navbar__right-list {
+  justify-content: flex-end;
 }
 
 .navbar__list-item {
@@ -92,7 +98,8 @@ body {
 
 .navbar__list-link:hover {
   border-bottom: 1px solid;
-  transition: border-color 0.2s ease;
+  filter: brightness(85%);
+  transition: border-bottom 0.2s ease;
 }
 
 .navbar__logo-link {
@@ -101,19 +108,15 @@ body {
   text-decoration: none;
 }
 
+.navbar__logo:hover {
+  filter: brightness(85%);
+}
+
 .navbar__logo {
   color: inherit;
   font-family: var(--navbar__header-font);
   margin: 0;
-}
-
-.navbar__right-menu {
-  display: none;
-  width: 33.33%;
-}
-
-.navbar__right-list {
-  justify-content: flex-end;
+  transition: ease-in-out 0.2;
 }
 
 .navbar__mobile {
@@ -142,3 +145,94 @@ body {
 }
 
 /* ----------------- </NavBar.tsx> ------------------- */
+/* ----------------- <HeroSplash.tsx> ---------------- */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+  --hero__splash-text-font: "Roboto", sans-serif;
+  --hero__splash-image: url(https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);
+}
+
+.hero__splash {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    var(--hero__splash-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+  text-shadow: 3px 3px 5px black;
+  width: auto;
+}
+
+.hero__content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 500px;
+  text-align: center;
+}
+
+.hero__splash-text {
+  color: white;
+  font-family: var(--hero__splash-text-font);
+  font-size: 3rem;
+  margin: 0;
+  width: 100%;
+}
+
+.hero__button-row {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: auto auto;
+  margin: 30px;
+}
+/* ----------------- </HeroSplash.tsx> ---------------- */
+/* ----------------- <Button.tsx> ---------------- */
+:root {
+  --button__font: "Roboto", sans-serif;
+  --button__light-bg: #eeebdd;
+  --button__dark-bg: #1b1717;
+}
+
+.button__ {
+  border-radius: 3px;
+  font-family: var(--button__font);
+  font-size: 1rem;
+  filter: drop-shadow(1px 1px 3px black);
+  padding: 10px 20px;
+  transition: ease-in-out 0.2;
+}
+
+.button__:hover {
+  filter: brightness(85%) drop-shadow(2px 2px 5px black);
+}
+
+.button__light-solid {
+  background-color: var(--button__light-bg);
+  border-style: none;
+  color: black;
+}
+
+.button__light-outlined {
+  border: 1px solid var(--button__light-bg);
+  background-color: white;
+  color: black;
+}
+
+.button__dark-solid {
+  background-color: var(--button__dark-bg);
+  border-style: none;
+  color: white;
+}
+
+.button__dark-outlined {
+  border: 1px solid var(--button__dark-bg);
+  background-color: white;
+  color: black;
+}
+/* ----------------- </Button.tsx> ---------------- */
