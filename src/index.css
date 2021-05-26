@@ -19,27 +19,30 @@ body {
 }
 
 /* ----------------- <NavBar.tsx> ------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Roboto&display=swap");
+
 :root {
-  --max-width: 1330px;
+  --navbar__max-width: 1330px;
+  --navbar__header-font: "Montserrat", sans-serif;
+  --navbar__link-font: "Roboto", sans-serif;
 }
 
 .navbar__holder {
   color: white;
   position: fixed;
   width: 100%;
+  transition: 0.2s cubic-bezier(0.25, 0.1, 0.6, 0.54);
 }
 
 .navbar__nav-scroll {
   background-color: white;
   border-color: black;
   color: black;
-  transition: background-color 0.2s cubic-bezier(0.25, 0.1, 0.6, 0.54);
 }
 
 .navbar__nav-top {
   background-color: transparent;
   border-color: white;
-  transition: background-color 0.2s cubic-bezier(0.25, 0.1, 0.6, 0.54);
 }
 
 .navbar__wrapper {
@@ -47,8 +50,8 @@ body {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: var(--max-width);
-  padding: 0 17px;
+  max-width: var(--navbar__max-width);
+  padding: 10px 17px;
 }
 
 .navbar__left-menu {
@@ -64,7 +67,7 @@ body {
   display: flex;
   list-style: none;
   list-style-image: none;
-  margin: 7px 0;
+  margin: 0;
   padding: 0;
 }
 
@@ -76,8 +79,8 @@ body {
   background-color: transparent;
   border: 1px solid transparent;
   color: inherit;
-  font-family: sans-serif;
-  font-size: 0.8125rem;
+  font-family: var(--navbar__link-font);
+  font-size: 0.9rem;
   margin: 0 15px;
   outline: 0;
   padding-top: 10px;
@@ -100,7 +103,8 @@ body {
 
 .navbar__logo {
   color: inherit;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: var(--navbar__header-font);
+  margin: 0;
 }
 
 .navbar__right-menu {
@@ -119,18 +123,9 @@ body {
 .navbar__hamburger-menu {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
-  justify-content: center;
-}
-
-.navbar__icon-line {
-  font-size: 70px;
-  font-style: none;
-  font-weight: 900;
-  font-variant: normal;
-  line-height: 0.7rem;
-  text-transform: none;
-  vertical-align: text-top;
+  justify-content: space-between;
+  height: 25px;
+  width: 30px;
 }
 
 @media (min-width: 1025px) {

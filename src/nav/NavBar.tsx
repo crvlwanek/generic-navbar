@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import * as React from "react";
 
 const siteTitle = "Website Title";
 const leftMenu = ["Songs", "Albums", "Artists"];
@@ -6,11 +6,11 @@ const rightMenu = ["Browse", "Contact", "Login"];
 
 export const NavBar: React.FC = () => {
   let listener: any = null;
-  const [scrollState, setScrollState] = useState("top");
+  const [scrollState, setScrollState] = React.useState("top");
 
-  useEffect(() => {
-    listener = document.addEventListener("scroll", (e) => {
-      var scrolled: any | null = document.scrollingElement?.scrollTop;
+  React.useEffect(() => {
+    listener = document?.addEventListener("scroll", (e) => {
+      var scrolled: any | null = document?.scrollingElement?.scrollTop;
       if (scrolled >= 10) {
         if (scrollState !== "amir") {
           setScrollState("amir");
@@ -22,7 +22,7 @@ export const NavBar: React.FC = () => {
       }
     });
     return () => {
-      document.removeEventListener("scroll", listener);
+      document?.removeEventListener("scroll", listener);
     };
   }, [scrollState]);
 
@@ -64,9 +64,15 @@ export const NavBar: React.FC = () => {
         </nav>
         <div className="navbar__mobile">
           <span className="navbar__hamburger-menu">
-            <span className="navbar__icon-line">–</span>
-            <span className="navbar__icon-line">–</span>
-            <span className="navbar__icon-line">–</span>
+            {[0, 1, 2].map((_) => (
+              <svg width="30" height="3">
+                <rect
+                  width="30"
+                  height="3"
+                  fill={scrollState === "top" ? "white" : "black"}
+                />
+              </svg>
+            ))}
           </span>
         </div>
       </div>
