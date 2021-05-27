@@ -168,6 +168,12 @@ body {
   width: auto;
 }
 
+@media (max-width: 600px) {
+  .hero__splash {
+    height: calc(var(--vh, 1vh) * 100);
+  }
+}
+
 .hero__content {
   align-items: center;
   display: flex;
@@ -195,12 +201,11 @@ body {
 /* ----------------- <Button.tsx> ---------------- */
 :root {
   --button__font: "Roboto", sans-serif;
-  --button__light-bg: #eeebdd;
-  --button__dark-bg: #1b1717;
 }
 
 .button__ {
-  border-radius: 3px;
+  border-radius: 7px;
+  cursor: pointer;
   font-family: var(--button__font);
   font-size: 1rem;
   filter: drop-shadow(1px 1px 3px black);
@@ -212,27 +217,12 @@ body {
   filter: brightness(85%) drop-shadow(2px 2px 5px black);
 }
 
-.button__light-solid {
-  background-color: var(--button__light-bg);
+.button__solid {
   border-style: none;
-  color: black;
 }
 
-.button__light-outlined {
-  border: 1px solid var(--button__light-bg);
-  background-color: white;
-  color: black;
-}
-
-.button__dark-solid {
-  background-color: var(--button__dark-bg);
-  border-style: none;
-  color: white;
-}
-
-.button__dark-outlined {
-  border: 1px solid var(--button__dark-bg);
-  background-color: white;
-  color: black;
+.button__outlined,
+.button__filled {
+  border: 2px solid;
 }
 /* ----------------- </Button.tsx> ---------------- */
